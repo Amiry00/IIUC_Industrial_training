@@ -1,49 +1,43 @@
 import 'dart:io';
 
 void main() {
-  print("=== DART CMD CALCULATOR ===");
+  print("=== SIMPLE CALCULATOR ===");
   print("Type 'exit' to quit\n");
 
   while (true) {
-    stdout.write("> ");
-    String? input = stdin.readLineSync();
+    stdout.write("> "); // show prompt without newline
 
+    String? input = stdin.readLineSync(); // wait for user input
+
+    // If nothing was typed (Ctrl + D), stop
     if (input == null) {
-      print("No input detected. Exiting...");
+      print("No input. Exiting...");
       break;
     }
 
-    input = input.trim();
+    input = input.trim().replaceAll(" ", ""); // remove spaces
 
+    // Exit condition
     if (input.toLowerCase() == "exit") {
       print("Calculator closed.");
       break;
     }
 
-    // Remove spaces so both formats work
-    input = input.replaceAll(" ", "");
+    // Pattern: number operator number (e.g. 2+2)
+    RegExp pattern =
+        RegExp(r'^(-?\d+\.?\d*)([\+\-\*\/])(-?\d+\.?\d*)$');
 
-    // Regex to match expressions like 2+2, -3.5*4, etc.
-    RegExp reg = RegExp(r'^(-?\d+\.?\d*)([\+\-\*\/])(-?\d+\.?\d*)$');
-    Match? match = reg.firstMatch(input);
+    Match? match = pattern.firstMatch(input);
 
     if (match == null) {
-      print("❌ Invalid format. Use like 2+2 or 2 + 2");
+      print("Invalid format. Try: 2+2 or 10/5");
       continue;
     }
 
-    double num1;
-    double num2;
-
-    try {
-      num1 = double.parse(match.group(1)!);
-      num2 = double.parse(match.group(3)!);
-    } catch (e) {
-      print("❌ Invalid numbers");
-      continue;
-    }
-
+    double num1 = double.parse(match.group(1)!);
     String op = match.group(2)!;
+    double num2 = double.parse(match.group(3)!);
+
     double result;
 
     switch (op) {
@@ -61,18 +55,18 @@ void main() {
 
       case "/":
         if (num2 == 0) {
-          print("❌ Cannot divide by zero");
+          print("Cannot divide by zero");
           continue;
         }
         result = num1 / num2;
         break;
 
       default:
-        print("❌ Invalid operator");
+        print("Unknown operator");
         continue;
     }
 
-    // Limit to 3 decimal places
+    // Show result (3 decimal places)
     print("= ${result.toStringAsFixed(3)}\n");
   }
 }
