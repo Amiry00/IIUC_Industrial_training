@@ -2,9 +2,6 @@ import 'dart:io';
 
 void main() {
   print("=== DART CMD CALCULATOR ===");
-  print("Examples:");
-  print("  2 + 2");
-  print("  2+2");
   print("Type 'exit' to quit\n");
 
   while (true) {
@@ -26,7 +23,7 @@ void main() {
     // Remove spaces so both formats work
     input = input.replaceAll(" ", "");
 
-    // Regex: number operator number
+    // Regex to match expressions like 2+2, -3.5*4, etc.
     RegExp reg = RegExp(r'^(-?\d+\.?\d*)([\+\-\*\/])(-?\d+\.?\d*)$');
     Match? match = reg.firstMatch(input);
 
@@ -75,7 +72,7 @@ void main() {
         continue;
     }
 
-    // 🔥 .3f formatting here
+    // Limit to 3 decimal places
     print("= ${result.toStringAsFixed(3)}\n");
   }
 }
