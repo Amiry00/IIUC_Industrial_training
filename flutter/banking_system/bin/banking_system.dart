@@ -8,7 +8,7 @@ void main() {
   SavingsAccount user1 =
       SavingsAccount(
         "S101",
-        "John Doe",
+        "Amirul Hoque",
         1000,
         5,
       );
@@ -27,7 +27,7 @@ void main() {
   CurrentAccount user2 =
       CurrentAccount(
         "C201",
-        "Alice Smith",
+        "Rivan",
         2000,
         500,
       );
