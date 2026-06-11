@@ -72,6 +72,33 @@ class _AddQuestionState extends State<AddQuestion> {
     );
   }
 
+  Future<void> _saveAndClose() async {
+    final hasInput = questionController.text.trim().isNotEmpty ||
+        optionAController.text.trim().isNotEmpty ||
+        optionBController.text.trim().isNotEmpty ||
+        optionCController.text.trim().isNotEmpty ||
+        optionDController.text.trim().isNotEmpty;
+
+    if (hasInput) {
+      if (!_formKey.currentState!.validate()) return;
+
+      final question = Question(
+        examId: widget.examId,
+        question: questionController.text.trim(),
+        optionA: optionAController.text.trim(),
+        optionB: optionBController.text.trim(),
+        optionC: optionCController.text.trim(),
+        optionD: optionDController.text.trim(),
+        correctOption: _correctOption,
+      );
+
+      await DBHelper().insertQuestion(question);
+    }
+
+    if (!mounted) return;
+    Navigator.pop(context);
+  }
+
   @override
   void dispose() {
     questionController.dispose();
@@ -218,7 +245,7 @@ class _AddQuestionState extends State<AddQuestion> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF4CAF50),
                       ),
-                      onPressed: () => Navigator.pop(context),
+                      onPressed: _saveAndClose,
                       icon: const Icon(Icons.done_rounded),
                       label: const Text('Done'),
                     ),

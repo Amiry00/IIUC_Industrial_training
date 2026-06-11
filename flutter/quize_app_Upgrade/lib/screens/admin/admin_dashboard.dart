@@ -230,12 +230,27 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await Navigator.push(
+          final result = await Navigator.push<Map<String, dynamic>>(
             context,
             MaterialPageRoute(
               builder: (_) => CreateExam(adminId: widget.user.id!),
             ),
           );
+          if (result != null) {
+            final examId = result['examId'] as int;
+            final examTitle = result['examTitle'] as String;
+            if (context.mounted) {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => AddQuestion(
+                    examId: examId,
+                    examTitle: examTitle,
+                  ),
+                ),
+              );
+            }
+          }
           _loadExams();
         },
         child: const Icon(Icons.add_rounded),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../database/db_helper.dart';
 import '../../models/exam.dart';
-import 'add_question.dart';
 
 class CreateExam extends StatefulWidget {
   final int adminId;
@@ -42,15 +41,10 @@ class _CreateExamState extends State<CreateExam> {
       ),
     );
 
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (_) => AddQuestion(
-          examId: examId,
-          examTitle: titleController.text.trim(),
-        ),
-      ),
-    );
+    Navigator.pop(context, {
+      'examId': examId,
+      'examTitle': titleController.text.trim(),
+    });
   }
 
   @override
