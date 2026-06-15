@@ -6,16 +6,16 @@ import '../login_screen.dart';
 import 'create_exam.dart';
 import 'add_question.dart';
 
-class AdminDashboard extends StatefulWidget {
+class TeacherDashboard extends StatefulWidget {
   final User user;
 
-  const AdminDashboard({super.key, required this.user});
+  const TeacherDashboard({super.key, required this.user});
 
   @override
-  State<AdminDashboard> createState() => _AdminDashboardState();
+  State<TeacherDashboard> createState() => _TeacherDashboardState();
 }
 
-class _AdminDashboardState extends State<AdminDashboard> {
+class _TeacherDashboardState extends State<TeacherDashboard> {
   final DBHelper _dbHelper = DBHelper();
   List<Exam> _exams = [];
   Map<int, int> _questionCounts = {};
@@ -27,11 +27,11 @@ class _AdminDashboardState extends State<AdminDashboard> {
     _loadExams();
   }
 
-  // Load all exams created by this admin and their respective question counts
+  // Load all exams created by this teacher and their respective question counts
   Future<void> _loadExams() async {
     setState(() => _isLoading = true);
 
-    final exams = await _dbHelper.getExamsByAdmin(widget.user.id!);
+    final exams = await _dbHelper.getExamsByTeacher(widget.user.id!);
     final counts = <int, int>{};
     for (final exam in exams) {
       counts[exam.id!] = await _dbHelper.getQuestionCount(exam.id!);
@@ -233,7 +233,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
           final result = await Navigator.push<Map<String, dynamic>>(
             context,
             MaterialPageRoute(
-              builder: (_) => CreateExam(adminId: widget.user.id!),
+              builder: (_) => CreateExam(teacherId: widget.user.id!),
             ),
           );
           if (result != null) {

@@ -164,60 +164,112 @@ class _AddQuestionState extends State<AddQuestion> {
                         validator: (v) =>
                             v == null || v.trim().isEmpty ? 'Required' : null,
                       ),
-                      const SizedBox(height: 14),
-                      TextFormField(
-                        controller: optionAController,
-                        decoration: const InputDecoration(
-                          labelText: 'Option A',
-                          prefixIcon: Icon(Icons.looks_one_outlined),
+                      const SizedBox(height: 18),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 4),
+                          child: Text(
+                            'Question Options & Correct Answer',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF5C6BC0),
+                            ),
+                          ),
                         ),
-                        validator: (v) =>
-                            v == null || v.trim().isEmpty ? 'Required' : null,
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Radio<String>(
+                            value: 'A',
+                            groupValue: _correctOption,
+                            activeColor: const Color(0xFF4CAF50),
+                            onChanged: (v) => setState(() => _correctOption = v!),
+                          ),
+                          Expanded(
+                            child: TextFormField(
+                              controller: optionAController,
+                              decoration: const InputDecoration(
+                                labelText: 'Option A',
+                                prefixIcon: Icon(Icons.looks_one_outlined),
+                              ),
+                              validator: (v) =>
+                                  v == null || v.trim().isEmpty ? 'Required' : null,
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 14),
-                      TextFormField(
-                        controller: optionBController,
-                        decoration: const InputDecoration(
-                          labelText: 'Option B',
-                          prefixIcon: Icon(Icons.looks_two_outlined),
-                        ),
-                        validator: (v) =>
-                            v == null || v.trim().isEmpty ? 'Required' : null,
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Radio<String>(
+                            value: 'B',
+                            groupValue: _correctOption,
+                            activeColor: const Color(0xFF4CAF50),
+                            onChanged: (v) => setState(() => _correctOption = v!),
+                          ),
+                          Expanded(
+                            child: TextFormField(
+                              controller: optionBController,
+                              decoration: const InputDecoration(
+                                labelText: 'Option B',
+                                prefixIcon: Icon(Icons.looks_two_outlined),
+                              ),
+                              validator: (v) =>
+                                  v == null || v.trim().isEmpty ? 'Required' : null,
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 14),
-                      TextFormField(
-                        controller: optionCController,
-                        decoration: const InputDecoration(
-                          labelText: 'Option C',
-                          prefixIcon: Icon(Icons.looks_3_outlined),
-                        ),
-                        validator: (v) =>
-                            v == null || v.trim().isEmpty ? 'Required' : null,
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Radio<String>(
+                            value: 'C',
+                            groupValue: _correctOption,
+                            activeColor: const Color(0xFF4CAF50),
+                            onChanged: (v) => setState(() => _correctOption = v!),
+                          ),
+                          Expanded(
+                            child: TextFormField(
+                              controller: optionCController,
+                              decoration: const InputDecoration(
+                                labelText: 'Option C',
+                                prefixIcon: Icon(Icons.looks_3_outlined),
+                              ),
+                              validator: (v) =>
+                                  v == null || v.trim().isEmpty ? 'Required' : null,
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 14),
-                      TextFormField(
-                        controller: optionDController,
-                        decoration: const InputDecoration(
-                          labelText: 'Option D',
-                          prefixIcon: Icon(Icons.looks_4_outlined),
-                        ),
-                        validator: (v) =>
-                            v == null || v.trim().isEmpty ? 'Required' : null,
-                      ),
-                      const SizedBox(height: 14),
-                      DropdownButtonFormField<String>(
-                        initialValue: _correctOption,
-                        dropdownColor: Colors.white,
-                        decoration: const InputDecoration(
-                          labelText: 'Correct Answer',
-                          prefixIcon: Icon(Icons.check_circle_outline_rounded),
-                        ),
-                        items: ['A', 'B', 'C', 'D']
-                            .map((o) => DropdownMenuItem(
-                                value: o, child: Text('Option $o')))
-                            .toList(),
-                        onChanged: (v) =>
-                            setState(() => _correctOption = v!),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Radio<String>(
+                            value: 'D',
+                            groupValue: _correctOption,
+                            activeColor: const Color(0xFF4CAF50),
+                            onChanged: (v) => setState(() => _correctOption = v!),
+                          ),
+                          Expanded(
+                            child: TextFormField(
+                              controller: optionDController,
+                              decoration: const InputDecoration(
+                                labelText: 'Option D',
+                                prefixIcon: Icon(Icons.looks_4_outlined),
+                              ),
+                              validator: (v) =>
+                                  v == null || v.trim().isEmpty ? 'Required' : null,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

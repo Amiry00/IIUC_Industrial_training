@@ -180,8 +180,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: Text('Student'),
                               ),
                               DropdownMenuItem(
-                                value: 'admin',
-                                child: Text('Admin'),
+                                value: 'teacher',
+                                child: Text('Teacher'),
                               ),
                             ],
                             onChanged: (value) {

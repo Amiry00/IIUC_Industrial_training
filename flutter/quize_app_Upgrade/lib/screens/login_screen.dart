@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../database/db_helper.dart';
 import '../models/user.dart';
 import 'register_screen.dart';
-import 'admin/admin_dashboard.dart';
+import 'teacher/teacher_dashboard.dart';
 import 'student/student_dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -46,11 +46,11 @@ class _LoginScreenState extends State<LoginScreen> {
       return;
     }
 
-    if (user.role == 'admin') {
+    if (user.role == 'teacher' || user.role == 'admin') {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => AdminDashboard(user: user),
+          builder: (_) => TeacherDashboard(user: user),
         ),
       );
     } else {

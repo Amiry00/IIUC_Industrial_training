@@ -3,9 +3,9 @@ import '../../database/db_helper.dart';
 import '../../models/exam.dart';
 
 class CreateExam extends StatefulWidget {
-  final int adminId;
+  final int teacherId;
 
-  const CreateExam({super.key, required this.adminId});
+  const CreateExam({super.key, required this.teacherId});
 
   @override
   State<CreateExam> createState() => _CreateExamState();
@@ -24,7 +24,7 @@ class _CreateExamState extends State<CreateExam> {
 
     final exam = Exam(
       title: titleController.text.trim(),
-      createdBy: widget.adminId,
+      createdBy: widget.teacherId,
     );
 
     final dbHelper = DBHelper();

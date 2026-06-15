@@ -113,12 +113,12 @@ class DBHelper {
     return await db.insert('exams', exam.toMap());
   }
 
-  Future<List<Exam>> getExamsByAdmin(int adminId) async {
+  Future<List<Exam>> getExamsByTeacher(int teacherId) async {
     final db = await database;
     final maps = await db.query(
       'exams',
       where: 'created_by = ?',
-      whereArgs: [adminId],
+      whereArgs: [teacherId],
     );
     return maps.map((map) => Exam.fromMap(map)).toList();
   }
