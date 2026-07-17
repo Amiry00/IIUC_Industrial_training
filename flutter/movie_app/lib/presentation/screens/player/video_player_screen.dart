@@ -3,7 +3,6 @@ import 'package:media_kit/media_kit.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart' hide Video;
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cinema/core/constants/app_constants.dart';
 import 'package:cinema/core/constants/api_constants.dart';
 import 'package:cinema/data/model/cast.dart';
 import 'package:cinema/presentation/screens/detail/movie_detail_screen.dart';
