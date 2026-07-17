@@ -2,7 +2,7 @@ class ApiConstants {
   ApiConstants._();
 
   // TMDb API - Free public API from https://github.com/public-apis/public-apis
-  // Get your free API key at: https://www.themoviedb.org/settings/api
+
   static const String apiKey = '2c070769381ebd36e833cd5daae75d50';
   static const String baseUrl = 'https://api.themoviedb.org/3';
   static const String imageBaseUrl = 'https://image.tmdb.org/t/p';
