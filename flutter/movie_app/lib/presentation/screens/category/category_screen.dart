@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:cinema/core/constants/app_constants.dart';
 import 'package:cinema/data/model/genre.dart';
 import 'package:cinema/data/model/movie.dart';
 import 'package:cinema/data/repository/movie_repository.dart';
@@ -8,7 +7,6 @@ import 'package:cinema/providers/movie_provider.dart';
 import 'package:cinema/presentation/widgets/movie_card.dart';
 import 'package:cinema/presentation/screens/detail/movie_detail_screen.dart';
 import 'package:get_it/get_it.dart';
-import 'package:provider/provider.dart';
 import 'package:cinema/providers/detail_provider.dart';
 
 class CategoryScreen extends StatefulWidget {
