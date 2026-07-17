@@ -4,11 +4,9 @@
 
 ## Overview
 
-Cinema is a premium, cross-platform movie discovery and streaming application built with Flutter. Designed with a sleek, cinematic dark theme inspired by industry-leading platforms, it delivers a seamless user experience across mobile and desktop devices. 
+**Cinema** is a premium, cross-platform movie discovery and streaming app built with Flutter. 
 
-Powered by the robust **TMDb (The Movie Database) API**, Cinema provides users with real-time access to trending, popular, and top-rated movies, along with comprehensive details, cast information, and categorized discovery. The app goes beyond standard metadata by seamlessly integrating an in-app video player to stream high-quality movie trailers directly from YouTube.
-
-Furthermore, Cinema includes built-in secure user authentication and robust local data management powered by SQLite, enabling persistent sessions and allowing users to manage personal watchlists seamlessly.
+It leverages the **TMDb API** for real-time movie data and integrates directly with YouTube for in-app trailer streaming. With a sleek dark theme, local SQLite authentication, and offline watchlist management, Cinema delivers a seamless cinematic experience across mobile and desktop devices.
 
 ## Screenshots
 
