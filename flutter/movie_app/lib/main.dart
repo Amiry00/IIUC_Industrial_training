@@ -15,7 +15,6 @@ import 'package:cinema/services/connectivity_service.dart';
 import 'package:cinema/data/repository/movie_repository.dart';
 import 'package:cinema/providers/movie_provider.dart';
 import 'package:cinema/providers/search_provider.dart';
-import 'package:cinema/providers/detail_provider.dart';
 import 'package:cinema/providers/watchlist_provider.dart';
 import 'package:cinema/providers/theme_provider.dart';
 import 'package:cinema/providers/auth_provider.dart';
