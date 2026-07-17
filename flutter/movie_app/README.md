@@ -2,6 +2,9 @@
 
 > **Your Cinema, Anywhere** — A premium movie streaming Flutter application
 
+## Download
+📥 **[Download the latest APK here](https://github.com/Amiry00/IIUC_Industrial_training/releases)**
+
 ## Overview
 
 **Cinema** is a premium, cross-platform movie discovery and streaming app built with Flutter. 
