@@ -5,7 +5,6 @@ import 'package:cinema/data/model/movie.dart';
 import 'package:cinema/providers/movie_provider.dart';
 import 'package:cinema/providers/watchlist_provider.dart';
 import 'package:cinema/presentation/widgets/hero_banner.dart';
-import 'package:cinema/presentation/widgets/movie_card.dart';
 import 'package:cinema/presentation/widgets/section_header.dart';
 import 'package:cinema/presentation/widgets/shimmer_loading.dart';
 import 'package:cinema/presentation/screens/detail/movie_detail_screen.dart';
