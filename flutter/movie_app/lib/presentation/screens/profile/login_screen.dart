@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:cinema/core/constants/app_constants.dart';
 import 'package:cinema/providers/auth_provider.dart';
 import 'package:cinema/providers/watchlist_provider.dart';
 import 'package:cinema/presentation/screens/profile/register_screen.dart';
