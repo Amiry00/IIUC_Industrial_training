@@ -44,7 +44,7 @@ It leverages the **TMDb API** for real-time movie data and integrates directly w
 
 ### Core Features
 - User Authentication (Registration & Login via SQLite)
-- Home Screen with hero banner and horizontal scrolling sections
+- Home Screen with hero banner 
 - Movie Detail Screen with cast, genres, similar movies, and blurred backdrop
 - In-App Video Player for YouTube trailers (via `media_kit`)
 - Watchlist Management (Add, Remove via SQLite)
